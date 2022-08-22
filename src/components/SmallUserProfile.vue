@@ -7,7 +7,7 @@
 
 <script>
     export default {
-        name: 'small-user-profile'
+        name: 'smalluser-profile'
         
     }
 </script>

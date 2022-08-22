@@ -1,18 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="pass this on"/>
+   <small-user-profile></small-user-profile>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import SmallUserProfile from '@/components/SmallUserProfile.vue';
 
 export default {
+  components: { 
+    SmallUserProfile 
+    },
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  
 }
 </script>
 
