@@ -1,6 +1,16 @@
 <template>
   <div id="app">
-   <small-user-profile></small-user-profile>
+   <!-- <small-user-profile v-for="(user, index) in users" :key="index" :user=> -->
+<small-user-profile v-for="(users_obj, index) in users" :key="index"
+:user="users_obj"></small-user-profile>
+
+   <h3>this is appvue</h3>
+
+   <!-- finally worked to make it show up -->
+   <h3>{{users[0][`name`]}}</h3>
+   
+
+   
   </div>
 </template>
 
@@ -10,7 +20,31 @@ import SmallUserProfile from '@/components/SmallUserProfile.vue';
 
 export default {
   components: { 
-    SmallUserProfile 
+    SmallUserProfile
+    } 
+    ,
+    data() {
+      return {
+        users: [{
+          name: `alpha`,
+          age: `4`,
+          is_premium: true,
+          id: `00` +7
+        },
+        {
+          name: `gamma`,
+          age: `11`,
+          is_premium: false,
+          id: `00` +8
+        },
+        {
+          name: `alpha`,
+          age: `18`,
+          is_premium: false,
+          id: `00` +9
+        },
+      ]
+    }
     },
   name: 'App',
   
