@@ -1,8 +1,18 @@
 <template>
   <div id="app">
    <!-- <small-user-profile v-for="(user, index) in users" :key="index" :user=> -->
-<small-user-profile v-for="(users_obj, index) in users" :key="index"
-:user="users_obj"></small-user-profile>
+<small-user-profile v-for="(users_obj, index) in users" 
+:key="index"
+:user="users_obj"
+@user_clicked="show_user" 
+></small-user-profile>
+<!-- <individual-post  -->
+    <!-- v-for="(post, index) in posts" -->
+    <!-- :key="index" -->
+    <!-- :post="post" -->
+    <!-- @user_clicked="show_post">testing -->
+
+<!-- </individual-post> -->
 
    <h3>this is appvue</h3>
 
@@ -19,6 +29,14 @@
 import SmallUserProfile from '@/components/SmallUserProfile.vue';
 
 export default {
+  // this is working now, if argument is set just use
+  methods: {
+    show_user(user_1) {
+      // to access the variable declared below here, need the $data.  user_1 is passing the string
+      // from the this.$emit after the event and comma.  which was a string of text
+      this.$data.users[0].name = user_1
+    }
+  },
   components: { 
     SmallUserProfile
     } 
